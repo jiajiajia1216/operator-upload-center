@@ -1,0 +1,41 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          JS_FILE=$(find dist/assets -name "*.js" | head -1)
+          JS_SIZE=$(stat -c%s "$JS_FILE")
+          echo "JS bundle size: $JS_SIZE bytes"
+          if [ "$JS_SIZE" -lt 500000 ]; then
+            echo "ERROR: JS bundle too small. Build may be incomplete!"
+            exit 1
+          fi
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 90523b24b456db0abd6ca731b3c66e59
+        run: npx wrangler pages deploy dist --project-name=operator-upload-center

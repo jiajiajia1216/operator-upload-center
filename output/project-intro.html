@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>爱回收·加盟回收运营 - 项目介绍</title>
+<style>
+  @page { margin: 2.5cm; }
+  body {
+    font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 11pt;
+    line-height: 1.8;
+    color: #333333;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 22pt;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 6pt;
+    letter-spacing: 1pt;
+  }
+  h2 {
+    font-size: 15pt;
+    font-weight: bold;
+    color: #2a2a2a;
+    margin-top: 28pt;
+    margin-bottom: 10pt;
+    padding-bottom: 6pt;
+    border-bottom: 2px solid #F9E72C;
+  }
+  h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #3a3a3a;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+  }
+  p {
+    margin-bottom: 10pt;
+    text-align: justify;
+  }
+  .subtitle {
+    text-align: center;
+    color: #888888;
+    font-size: 10pt;
+    margin-bottom: 30pt;
+  }
+  .tech-tag {
+    display: inline-block;
+    background-color: #FFF9DB;
+    color: #6B5900;
+    border: 1px solid #F9E72C;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 9pt;
+    margin: 2px 3px 2px 0;
+    font-family: Consolas, "Courier New", monospace;
+  }
+  .tech-tags {
+    margin-bottom: 14pt;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0 16pt 0;
+    font-size: 10pt;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background-color: #FFF9DB;
+    font-weight: bold;
+    color: #3D3A39;
+  }
+  td:first-child {
+    font-weight: bold;
+    white-space: nowrap;
+    width: 120px;
+  }
+  blockquote {
+    margin: 14pt 0;
+    padding: 10pt 14pt;
+    border-left: 4px solid #F9E72C;
+    background-color: #FFFDF5;
+    color: #555555;
+    font-size: 10.5pt;
+  }
+  ul, ol {
+    margin: 6pt 0 12pt 18pt;
+  }
+  li {
+    margin-bottom: 4pt;
+  }
+  .grade-table td:first-child {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+  .grade-a { color: #22C55E; }
+  .grade-b { color: #333333; }
+  .grade-c { color: #F59E0B; }
+  .grade-d { color: #f87171; }
+  .footer {
+    margin-top: 40pt;
+    padding-top: 14pt;
+    border-top: 1px solid #eeeeee;
+    text-align: center;
+    color: #aaaaaa;
+    font-size: 9pt;
+  }
+</style>
+</head>
+<body>
+
+<h1>爱回收 · 加盟回收运营</h1>
+<p class="subtitle">Operator Upload Center &mdash; 操盘手运营管理平台 v1.1.0</p>
+
+<h2>项目概述</h2>
+<p>"爱回收 · 加盟回收运营"是一套面向爱回收加盟体系全国操盘手团队的移动端运营管理平台。平台以 H5 页面的形式部署上线，覆盖全国 267 名操盘手和 8 名运营经理，提供<strong>绩效排名、实时数据、巡店管理、会议管理、培训管理、数据通报</strong>六大核心功能模块，帮助管理层实时掌握团队运营状况，驱动门店服务质量持续提升。</p>
+
+<p>平台基于 React + TypeScript 技术栈构建，前端部署于 Cloudflare Pages，后端采用 Cloudflare Workers + D1 数据库方案，实现巡店记录、会议记录、培训记录和通报记录的云端存储与管理。通过设备指纹识别与 GPS 定位技术，确保数据采集的真实性和可追溯性。</p>
+
+<div class="tech-tags">
+  <span class="tech-tag">React 18</span>
+  <span class="tech-tag">TypeScript</span>
+  <span class="tech-tag">Vite 6</span>
+  <span class="tech-tag">Tailwind CSS 3</span>
+  <span class="tech-tag">Cloudflare Pages</span>
+  <span class="tech-tag">Cloudflare Workers</span>
+  <span class="tech-tag">Cloudflare D1</span>
+  <span class="tech-tag">React Router 7</span>
+</div>
+
+<h2>核心功能</h2>
+
+<h3>1. 操盘手排名看板</h3>
+<p>平台的核心模块，基于九大业务维度对全国操盘手进行量化评分和分级排名，总分 100 分。系统根据累计门店数占比自动划分 A/B/C/D 四个等级，让管理层一目了然地识别团队中的优秀与待改进成员。</p>
+
+<table>
+<tr><th>维度</th><th>满分</th><th>评分标准</th></tr>
+<tr><td>企微回复</td><td>10 分</td><td>工作时间用户主动/回复会话数门店均值 &ge;90% 得 10 分，&ge;80% 得 5 分</td></tr>
+<tr><td>询价转化</td><td>15 分</td><td>有效报价量&rarr;成交转化率门店均值 &ge;20% 得 15 分，&ge;18% 得 10 分，&ge;16% 得 5 分</td></tr>
+<tr><td>拉新</td><td>10 分</td><td>日均拉新 &ge;9 得 10 分，&ge;6 得 5 分</td></tr>
+<tr><td>O2O 效率</td><td>15 分</td><td>O2O 提交成交率 &ge;60% 得 15 分，&ge;55% 得 10 分</td></tr>
+<tr><td>无人时长</td><td>10 分</td><td>门店日度总无人时长均值 &le;80min 得 10 分，&le;90min 得 5 分</td></tr>
+<tr><td>巡店</td><td>10 分</td><td>执行人=操盘手，巡店次数 &ge; 门店数得 10 分</td></tr>
+<tr><td>培训</td><td>10 分</td><td>创建人=操盘手，场次 &ge;2 且覆盖率 &ge;100% 得 10 分，场次 &ge;1 得 5 分</td></tr>
+<tr><td>会议</td><td>10 分</td><td>创建人=操盘手，月度 &ge;11 次得 10 分，&ge;8 次得 5 分</td></tr>
+<tr><td>通报</td><td>10 分</td><td>创建人=操盘手，月度通报次数 &ge; 天数得 10 分</td></tr>
+</table>
+
+<table class="grade-table">
+<tr><th>等级</th><th>门店累计占比</th><th>说明</th></tr>
+<tr><td class="grade-a">A</td><td>&le; 20%</td><td>头部优秀，综合运营能力突出</td></tr>
+<tr><td class="grade-b">B</td><td>&le; 80%</td><td>运营表现良好，稳定达标</td></tr>
+<tr><td class="grade-c">C</td><td>&le; 90%</td><td>部分指标存在短板，需关注</td></tr>
+<tr><td class="grade-d">D</td><td>&gt; 90%</td><td>综合运营能力待提升，需重点辅导</td></tr>
+</table>
+
+<p>不同角色看到的数据范围不同：管理员可查看全国全部数据，运营经理仅看到自己管理的区域，操盘手只能看到自己的评分详情和全局排名。</p>
+
+<h3>2. 今日数据 / 月度数据</h3>
+<p>实时展示门店回收数据，包括门店回收量、抖音回收量、未交付用户数等核心指标。数据按"区域 &rarr; 门店 &rarr; 店员"三级树形结构组织，支持按区域筛选。管理员和运营经理可查看全量数据，操盘手仅能看到自己名下门店的数据。</p>
+
+<h3>3. 巡店管理</h3>
+<p>操盘手提交巡店记录，需选择门店并上传四张必须照片：门店门头照、乐橙全景截图、店员全身照、操作台照片。每张照片通过 Canvas 自动添加水印（包含操盘手姓名、门店名称、GPS 坐标、拍摄时间），确保采集的真实性。GPS 定位采用并行获取策略，不会阻塞图片处理流程。系统自动防止同门店同日重复提交。</p>
+
+<h3>4. 数据通报</h3>
+<p>支持按时间段提交数据通报记录，分为上午通报（6:00-12:00）和三段下午通报（12:00-14:00、14:00-17:00、17:00-20:00），每个时间段仅允许提交一次。通报需附带现场照片（同样带水印和 GPS 信息）。</p>
+
+<h3>5. 会议管理</h3>
+<p>记录团队会议信息，包括会议日期、会议链接、会议纪要和现场照片。系统追踪每位操盘手的月度会议次数（月度 &ge;11 次得满分），帮助管理层监督团队沟通频率。</p>
+
+<h3>6. 培训管理</h3>
+<p>记录培训活动，包括培训主题、考核信息、培训日期和现场照片。系统追踪月度培训场次和覆盖率（&ge;2 场且覆盖率 &ge;100% 得满分），确保门店服务规范的有效传达。</p>
+
+<h3>7. 提交记录查看</h3>
+<p>统一查看所有类型的提交记录（巡店、通报、会议、培训），支持按时间倒序浏览、查看详情、预览大图和删除操作。管理员可查看所有人的记录，操盘手仅能看到自己的提交。</p>
+
+<h3>8. 管理面板（仅管理员）</h3>
+<p>提供五个管理子模块：</p>
+<ul>
+<li><strong>数据总览</strong> &mdash; 巡店、通报、会议、培训各类型的提交数量汇总</li>
+<li><strong>设备审批</strong> &mdash; 新设备登录需管理员审批通过后方可使用</li>
+<li><strong>登录异常</strong> &mdash; 检测异常登录行为（如同一账号多设备、频繁切换设备等）</li>
+<li><strong>GPS 异常</strong> &mdash; 识别巡店照片中 GPS 坐标与门店位置偏差过大的情况</li>
+<li><strong>上传记录</strong> &mdash; 按操盘手维度查看所有提交记录明细</li>
+</ul>
+
+<h2>安全机制</h2>
+<table>
+<tr><th>机制</th><th>说明</th></tr>
+<tr><td>设备指纹</td><td>基于浏览器 User-Agent、屏幕分辨率、时区、语言等生成唯一设备标识，无需安装任何客户端</td></tr>
+<tr><td>设备绑定</td><td>首次登录自动绑定设备，更换设备需管理员审批，防止账号共用</td></tr>
+<tr><td>照片水印</td><td>所有上传照片自动添加操盘手姓名、门店名称、GPS 坐标、拍摄时间水印</td></tr>
+<tr><td>GPS 验证</td><td>巡店照片采集 GPS 定位数据，后台可对比门店实际位置检测异常</td></tr>
+<tr><td>防重复提交</td><td>同门店同日巡店不可重复提交，通报按时间段限制提交次数</td></tr>
+<tr><td>角色权限</td><td>三级角色体系（管理员 / 运营经理 / 操盘手），各角色数据可见范围不同</td></tr>
+</table>
+
+<h2>技术架构</h2>
+
+<table>
+<tr><th>层级</th><th>技术方案</th><th>说明</th></tr>
+<tr><td>前端框架</td><td>React 18 + TypeScript</td><td>SPA 单页应用，组件化开发</td></tr>
+<tr><td>构建工具</td><td>Vite 6</td><td>快速构建和热更新</td></tr>
+<tr><td>样式方案</td><td>Tailwind CSS 3</td><td>原子化 CSS，高效定制移动端界面</td></tr>
+<tr><td>路由</td><td>React Router 7</td><td>客户端路由，支持权限控制</td></tr>
+<tr><td>前端部署</td><td>Cloudflare Pages</td><td>全球 CDN 加速，GitHub 自动构建部署</td></tr>
+<tr><td>后端 API</td><td>Cloudflare Workers</td><td>Serverless 函数，低延迟响应</td></tr>
+<tr><td>数据库</td><td>Cloudflare D1</td><td>SQLite 兼容的 Serverless 数据库</td></tr>
+<tr><td>图片处理</td><td>Canvas API</td><td>前端压缩（1600px / JPEG 0.65）+ 水印，单张 &le;150KB</td></tr>
+<tr><td>CI/CD</td><td>GitHub Actions</td><td>Push 触发自动构建检查</td></tr>
+</table>
+
+<h2>适用场景</h2>
+<blockquote>
+本系统为爱回收加盟回收运营体系量身打造，适用于连锁门店管理、区域操盘手团队绩效考核、门店巡检与培训管理等场景。系统采用移动端优先设计，适配手机浏览器直接访问，无需安装 App，降低一线人员的使用门槛。
+</blockquote>
+
+<h2>项目信息</h2>
+<table>
+<tr><td>项目名称</td><td>operator-upload-center</td></tr>
+<tr><td>当前版本</td><td>v1.1.0</td></tr>
+<tr><td>线上地址</td><td>https://operator-upload-center.pages.dev/</td></tr>
+<tr><td>代码仓库</td><td>GitHub（自动部署至 Cloudflare Pages）</td></tr>
+<tr><td>服务对象</td><td>全国 267 名操盘手 + 8 名运营经理 + 1 名管理员</td></tr>
+<tr><td>覆盖门店</td><td>258 名操盘手名下共管理数百个门店</td></tr>
+</table>
+
+<div class="footer">
+  爱回收 · 加盟回收运营 &mdash; 操盘手运营管理平台<br>
+  Generated on 2026-04-25
+</div>
+
+</body>
+</html>
