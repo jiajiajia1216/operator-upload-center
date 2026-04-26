@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            padding: 16px;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 24px 0;
+        }
+        
+        .header h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .header p {
+            font-size: 14px;
+            color: #999;
+            margin-top: 4px;
+        }
+        
+        .form-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .form-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.2s;
+        }
+        
+        .form-item:active {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .form-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .icon-patrol { background: #e8f5e9; }
+        .icon-report { background: #e3f2fd; }
+        .icon-meeting { background: #f3e5f5; }
+        .icon-training { background: #fff3e0; }
+        
+        .form-info h3 {
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-info p {
+            font-size: 12px;
+            color: #999;
+            margin-top: 2px;
+        }
+        
+        .arrow {
+            color: #ccc;
+            font-size: 18px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>表单中心</h1>
+            <p>点击表单卡片进行填写</p>
+        </div>
+        
+        <div class="form-list">
+            <a href="https://atrenew.feishu.cn/share/base/form/shrcnMQeBJ1YcJofNrLTMkaqq7d" class="form-item" target="_blank">
+                <div class="form-left">
+                    <div class="form-icon icon-patrol">🏪</div>
+                    <div class="form-info">
+                        <h3>巡店记录</h3>
+                        <p>提交巡店检查记录</p>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+            
+            <a href="https://atrenew.feishu.cn/share/base/form/shrcnYID3DbTs9LfLbeEZ086BYD" class="form-item" target="_blank">
+                <div class="form-left">
+                    <div class="form-icon icon-report">📊</div>
+                    <div class="form-info">
+                        <h3>数据通报</h3>
+                        <p>提交数据通报</p>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+            
+            <a href="https://atrenew.feishu.cn/share/base/form/shrcnx3MFAQ28xRMQ9jIIyeG8pe" class="form-item" target="_blank">
+                <div class="form-left">
+                    <div class="form-icon icon-meeting">📝</div>
+                    <div class="form-info">
+                        <h3>会议记录</h3>
+                        <p>提交会议记录</p>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+            
+            <a href="https://atrenew.feishu.cn/share/base/form/shrcnGlDPTDoDSXaK2b2UoWm3ed" class="form-item" target="_blank">
+                <div class="form-left">
+                    <div class="form-icon icon-training">📚</div>
+                    <div class="form-info">
+                        <h3>培训记录</h3>
+                        <p>提交培训记录</p>
+                    </div>
+                </div>
+                <div class="arrow">›</div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            爱回收 · 操盘手管理系统
+        </div>
+    </div>
+</body>
+</html>

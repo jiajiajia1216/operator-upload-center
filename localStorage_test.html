@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>localStorage测试</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>localStorage测试</h1>
+    <button onclick="testLocalStorage()">测试localStorage</button>
+    <div id="result"></div>
+
+    <script>
+        function testLocalStorage() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>测试中...</p>';
+
+            try {
+                // 测试1: 基本写入和读取
+                localStorage.setItem('test', 'hello');
+                const value = localStorage.getItem('test');
+                if (value !== 'hello') {
+                    throw new Error('读取值不匹配');
+                }
+                localStorage.removeItem('test');
+
+                // 测试2: 存储空间测试
+                let testData = 'x'.repeat(1024); // 1KB
+                let count = 0;
+                try {
+                    for (let i = 0; i < 100; i++) { // 尝试存储100KB
+                        localStorage.setItem('test_' + i, testData);
+                        count++;
+                    }
+                } catch (e) {
+                    resultDiv.innerHTML += '<p>存储空间测试: 在存储' + count + 'KB后失败</p>';
+                    resultDiv.innerHTML += '<p>错误: ' + e.message + '</p>';
+                    // 清理测试数据
+                    for (let i = 0; i < count; i++) {
+                        localStorage.removeItem('test_' + i);
+                    }
+                    return;
+                }
+
+                // 清理测试数据
+                for (let i = 0; i < count; i++) {
+                    localStorage.removeItem('test_' + i);
+                }
+
+                resultDiv.innerHTML = '<p style="color: green;">✓ localStorage可用</p>';
+                resultDiv.innerHTML += '<p>成功存储并读取' + count + 'KB数据</p>';
+
+                // 显示当前存储使用情况
+                let total = 0;
+                for (let key in localStorage) {
+                    if (localStorage.hasOwnProperty(key)) {
+                        total += localStorage[key].length * 2; // UTF-16编码，每个字符2字节
+                    }
+                }
+                resultDiv.innerHTML += '<p>当前localStorage使用: ' + (total / 1024).toFixed(2) + ' KB</p>';
+
+            } catch (error) {
+                resultDiv.innerHTML = '<p style="color: red;">✗ localStorage不可用</p>';
+                resultDiv.innerHTML += '<p>错误: ' + error.message + '</p>';
+                resultDiv.innerHTML += '<p>可能原因:</p>';
+                resultDiv.innerHTML += '<ul>';
+                resultDiv.innerHTML += '<li>浏览器隐私模式</li>';
+                resultDiv.innerHTML += '<li>浏览器设置禁用localStorage</li>';
+                resultDiv.innerHTML += '<li>存储配额已满</li>';
+                resultDiv.innerHTML += '</ul>';
+            }
+        }
+
+        // 页面加载时自动测试
+        window.onload = testLocalStorage;
+    </script>
+</body>
+</html>

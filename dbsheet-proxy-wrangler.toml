@@ -1,0 +1,9 @@
+name = "dbsheet-proxy"
+main = "dbsheet-proxy-worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+WPS_API_BASE = "https://api.wps.cn"
+
+# 注意：WPS_SID 需要在 Cloudflare Dashboard 中设置为 Secret
+# 运行命令: wrangler secret put WPS_SID
