@@ -8,9 +8,10 @@ set -e
 echo "=== 开始部署到 GitHub ==="
 
 # GitHub配置
+GITHUB_TOKEN="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"
 REPO_OWNER="jiajiajia1216"
 REPO_NAME="operator-upload-center"
-REPO_URL="https://github.com/${REPO_OWNER}/${REPO_NAME}.git"
+REPO_URL="https://${GITHUB_TOKEN}@github.com/${REPO_OWNER}/${REPO_NAME}.git"
 
 # 检查是否在正确的目录
 if [ ! -f "package.json" ]; then
